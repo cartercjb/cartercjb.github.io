@@ -1,7 +1,82 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-us">
+
+<head>
+
+      <title>Custom Naviation Bar Notion</title> 
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+  <!-- Google Font -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
+
+  <!-------->
+
+  <style>
+    * {
+      margin: 1;
+      padding: 1;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+
+    .navMenu {
+      font-family: 'Advent Pro', sans-serif;
+      padding: 8px;
+      text-align: center;
+      margin: 7px auto;
+      width: fit-content;
+    }
+
+    .navMenu a {
+      color: #272727;
+      text-decoration: none;
+      text-transform: uppercase;
+      display: inline-block;
+      padding: 6px;
+    }
+
+    .background {
+      background-color: #fbffde;
+    }
+
+    .border {
+      border: 1px solid #cccccc;
+    }
+
+    .navMenu a:hover {
+      color: #d00b39;
+    }
+  </style>
+</head>
+
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+
+  <nav class="navMenu  border background">
+    <a id="home" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-house"></i> </a>
+    <a id="projects" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-bars-progress"></i> Projects</a>
+    <a id="tasks" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-list-check"></i> Tasks</a>
+
+  </nav>
+
+  <script>
+    let direction = "horizontal";
+    if (direction === "vertical") {
+      document.head.insertAdjacentHTML("beforeend", `<style>.navMenu a {display: block; text-align:left; margin:7px} i{width:15px; margin-right:5px} .navMenu{margin:3px}</style>`)
+    }
+
+    function navigate(id) {
+      if (id == 'home')
+        window.open("https://www.notion.so/carterjbayer/CJB-Life-Command-Center-cc47b8e7fb7e4fc4834af1eebfb2c746?pvs=4", '_blank').focus();
+      else if (id == 'projects') window.open("https://www.notion.so/carterjbayer/a2224a622b41405c81db38724430fe01?v=1f2240269efc44528820b916fe3aa9bc&pvs=4", '_blank').focus();
+      else if (id == 'tasks') window.open("https://www.notion.so/carterjbayer/42e212c4cfd94072a0709889fcc436f0?v=cd4a13bcf571495e80c9c97a8419ca97&pvs=4", '_blank').focus();
+    }
+  </script>
+
 </body>
+
 </html>
